@@ -12,3 +12,16 @@
     "table.include.list": "public.student"
   }
 }
+
+// curl -i -x POST -H "Accept: application/json" -H "Content-Type: application/json" 127.0.0.1:8083/connectors/ --data "@debezium.json"
+
+//! Creating connection between debezium and postgres server
+//$headers = @{
+//  "Accept" = "application/json"
+//  "Content-Type" = "application/json"
+//}
+//
+//Invoke-WebRequest -Uri "http://127.0.0.1:8083/connectors/" -Method Post -Headers $headers -InFile "E:\Personal Repos\Batch-Processing-Using-Kafka-and-Databricks\debezium.json"
+
+//! Command to tail changes as kafka is reading from
+// docker run --tty --network batch-processing-using-kafka-and-databricks_default confluentic/cp-kafkacat kafkacat -b kafka:9092 -C -s key=s -s value=avro -r http://schema-registry:8081 -t postgres.public.student
